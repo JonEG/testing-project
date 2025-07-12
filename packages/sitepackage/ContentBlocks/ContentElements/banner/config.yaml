@@ -27,3 +27,9 @@ fields:
     type: Textarea
     name: Banner Content
     enableRichtext: true
+  -
+    identifier: url
+    label: Page Link
+    type: Link
+    allowedTypes:
+      - page
