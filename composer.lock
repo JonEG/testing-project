@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9eeac54e13d400c156304cad4b09a048",
+    "content-hash": "1ae2fb265e35602bae80f0e9e2450131",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1245,6 +1245,41 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "jondevelops/sitepackage",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/sitepackage",
+                "reference": "1c6eb8a5ceb07d172a051f6e7f798dd610fb4690"
+            },
+            "require": {
+                "typo3/cms-core": "^13.4",
+                "typo3/cms-fluid-styled-content": "^13.4",
+                "typo3/cms-rte-ckeditor": "^13.4"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "sitepackage"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jondevelops\\Sitepackage\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "homepage": "https://jondevelops.com/",
+            "keywords": [
+                "TYPO3 CMS"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "lolli42/finediff",
@@ -7310,7 +7345,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "jondevelops/sitepackage": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},

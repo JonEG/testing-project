@@ -1,4 +1,6 @@
 base: /
+dependencies:
+  - jondevelops/sitepackage
 languages:
   -
     title: English
