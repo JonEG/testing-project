@@ -14,30 +14,22 @@ fields:
     renderType: selectSingle
     name: Display Position
     items:
-      -
-        label: Top
-        value: top
-      -
-        label: Bottom
-        value: bottom
+      - value: top
+      - value: bottom
     defaultValue: top
   -
     identifier: background-color
-    label: Background Color
     type: Color
   -
     identifier: text-color
-    label: Text Color
     type: Color
   -
     identifier: content
-    label: Content
     type: Textarea
     name: Banner Content
     enableRichtext: true
   -
     identifier: url
-    label: Page Link
     type: Link
     allowedTypes:
       - page

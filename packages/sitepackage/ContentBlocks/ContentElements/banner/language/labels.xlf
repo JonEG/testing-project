@@ -9,6 +9,27 @@
 			<trans-unit id="description">
 				<source>Description for Content Element jondevelops/banner</source>
 			</trans-unit>
+			<trans-unit id="position.label">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="position.items.top.label">
+				<source>Top</source>
+			</trans-unit>
+			<trans-unit id="position.items.bottom.label">
+				<source>Bottom</source>
+			</trans-unit>
+			<trans-unit id="background-color.label">
+				<source>Background Color</source>
+			</trans-unit>
+			<trans-unit id="text-color.label">
+				<source>Text Color</source>
+			</trans-unit>
+			<trans-unit id="content.label">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="url.label">
+				<source>Page Link</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
