@@ -7,7 +7,7 @@
 				<source>Banner</source>
 			</trans-unit>
 			<trans-unit id="description">
-				<source>Description for Content Element jondevelops/banner</source>
+				<source>Banner/Flash-Message</source>
 			</trans-unit>
 			<trans-unit id="position.label">
 				<source>Position</source>
