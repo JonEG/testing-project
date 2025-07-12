@@ -7,3 +7,17 @@ fields:
   -
     identifier: header
     useExistingField: true
+  -
+    identifier: position
+    label: Position
+    type: Select
+    renderType: selectSingle
+    name: Display Position
+    items:
+      -
+        label: Top
+        value: top
+      -
+        label: Bottom
+        value: bottom
+    defaultValue: top
