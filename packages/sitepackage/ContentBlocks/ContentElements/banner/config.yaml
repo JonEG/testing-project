@@ -5,9 +5,6 @@ prefixFields: true
 prefixType: full
 fields:
   -
-    identifier: header
-    useExistingField: true
-  -
     identifier: position
     label: Position
     type: Select
