@@ -21,3 +21,9 @@ fields:
         label: Bottom
         value: bottom
     defaultValue: top
+  -
+    identifier: content
+    label: Content
+    type: Textarea
+    name: Banner Content
+    enableRichtext: true
