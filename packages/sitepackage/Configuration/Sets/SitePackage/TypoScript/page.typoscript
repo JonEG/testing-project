@@ -5,8 +5,11 @@ page.shortcutIcon = EXT:sitepackage/Resources/Public/Icons/favicon.ico
 
 page.includeCSSLibs {
     sitepackage_layout = EXT:sitepackage/Resources/Public/Css/layout.css
+    vite_tailwind = EXT:sitepackage/Resources/Public/Build/ContentElements/main-tailwind/main-tailwind.css
 }
 
 page.includeJSFooterlibs {
     sitepackage_scripts = EXT:sitepackage/Resources/Public/JavaScript/main.js
+    vite_tailwind = EXT:sitepackage/Resources/Public/Build/ContentElements/main-tailwind/main.js
+    vite_banner_ce = EXT:sitepackage/Resources/Public/Build/ContentElements/banner/main.js
 }

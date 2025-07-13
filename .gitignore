@@ -7,4 +7,4 @@ nbproject
 /public/*
 !/public/.htaccess
 
-packages/sitepackage/Resources/Public/Vite
+packages/sitepackage/Resources/Public/Build

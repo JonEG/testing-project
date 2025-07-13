@@ -1,37 +1,41 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
-import { globSync } from 'glob'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vite';
+import path from 'path';
+import fg from 'fast-glob';
+import { fileURLToPath } from 'url';
+import tailwindcss from '@tailwindcss/vite';
 
-// Automatically find all main.ts files in ContentBlocks and the main entry point
-const entries = globSync([
-  './src/main.ts',
-  '../../../ContentBlocks/*/*/main.ts'
-]).map(file => {
-  // Create a unique key for each entry point
-  const key = file.startsWith('../../../')
-    // For ContentBlocks: 'contentelements-banner' from '../../ContentBlocks/ContentElements/banner/main.ts'
-    ? path.relative('../../../ContentBlocks', file)
-        .slice(0, -path.extname(file).length) // remove extension .ts
-        .replace(/\/main$/, '') // remove /main suffix
-        .replace(/\//g, '-') // replace slashes with dashes
-        .toLowerCase()
-    // For main entry: 'main' from './src/main.ts'
-    : path.basename(file, path.extname(file));
+// Simulate __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-  return [key, fileURLToPath(new URL(file, import.meta.url))];
+// Collect inputs
+const contentElementEntries = fg.sync(
+  path.resolve(__dirname, '../../../ContentBlocks/ContentElements/**/*.ts')
+);
+
+const input: Record<string, string> = {
+  'main-tailwind': path.resolve(__dirname, './src/main.ts'),
+};
+
+contentElementEntries.forEach(file => {
+  const elementName = path.basename(path.dirname(file));
+  input[elementName] = file;
 });
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input,
+      output: {
+        entryFileNames: 'ContentElements/[name]/main.js',
+        assetFileNames: 'ContentElements/[name]/[name].[ext]',
+      },
+    },
+    outDir: path.resolve(__dirname, '../../Public/Build'),
+    emptyOutDir: true,
+  },
   plugins: [
     tailwindcss(),
-  ],
-  build: {
-    outDir: '../../../Resources/Public/Vite',
-    manifest: true,
-    rollupOptions: {
-      input: Object.fromEntries(entries)
-    }
-  }
-})
+  ]
+
+});
