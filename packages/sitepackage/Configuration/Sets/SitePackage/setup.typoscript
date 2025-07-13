@@ -1,1 +1,9 @@
+######################
+#### Dependencies ####
+######################
+@import 'EXT:bootstrap_package/Configuration/TypoScript/'
+
+#####################
+#### Sitepackage ####
+#####################
 @import './TypoScript/'
