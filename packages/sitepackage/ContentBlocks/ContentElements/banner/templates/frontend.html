@@ -1,7 +1,12 @@
-<div class="w-[85vw] py-4 px-6 fixed z-9999 left-[50%] -translate-x-[50%]
-{f:if(condition: '{data.position} == top', then: 'top-4', else: 'bottom-4')}"
-style="color:{data.text-color}; background-color: {data.background-color};">
-    <div class="container mx-auto text-center space-y-2">
+<div data-banner class="w-[85vw] py-4 px-6 fixed z-9999 left-[50%] -translate-x-[50%] rounded shadow-lg
+    {f:if(condition: '{data.position} == top', then: 'top-4', else: 'bottom-4')}"
+    style="color: {data.text-color}; background-color: {data.background-color};">
+    <div class="container mx-auto text-center space-y-2 relative">
+        <button type="button" class="absolute top-2 right-2 text-white hover:text-gray-300" aria-label="Close banner"
+            data-banner-close-button>
+            &#10005;
+        </button>
+
         <div>{data.content -> f:format.html()}</div>
         <f:if condition="{data.url}">
             <f:link.typolink parameter="{data.url}"
