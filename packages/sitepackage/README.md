@@ -2,9 +2,9 @@ Site Package for the project "Sitepackage"
 ==============================================================
 
 ## Install extension on your project
-Step 1 — Add VCS Repository to Project Composer
+* Step 1 — Add VCS Repository to Project Composer
 In your TYPO3 project root, open composer.json and add:
-
+```yaml
 "repositories": [
   {
     "type": "vcs",
@@ -14,25 +14,28 @@ In your TYPO3 project root, open composer.json and add:
 "require": {
   "jondevelops/sitepackage": "@dev"
 }
+```
 
-Step 2 — Require the Package
-
+* Step 2 — Require the Package
+```bash
 composer require jondevelops/sitepackage:@dev
+```
 
-Step 3 — Activate in TYPO3 Backend
-Go to Site Management > Sites -> Sets for this Site
+* Step 3 — Activate in TYPO3 Backend
+    Go to Site Management > Sites -> Sets for this Site
 
-Set your sitepackage in the "Site Package" dropdown
+    Set your sitepackage in the "Site Package" dropdown
 
-Step 4 - Edit TypoScript record "Introduction Package" on page "Congratulations"
+* Step 4 - Edit TypoScript record "Introduction Package" on page "Congratulations"
 on Advanced Options, uncheck Clear -> Contants and Setup.
 
-Step 5 Clean cache.
+* Step 5 Clean cache.
 
 ## Build Vite files
-
+```bash
 cd packages/sitepackage/Resources/Private/vite-compiler/
 nvm i
 nvm use
 npm install
 npm run build
+```
